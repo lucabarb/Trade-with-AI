@@ -51,10 +51,14 @@ AUTO_REFRESH_SECONDS = 600  # 10 minutes
 
 # ── Paths ────────────────────────────────────────────
 import pathlib
+import tempfile
 
 BASE_DIR = pathlib.Path(__file__).parent
-DATA_DIR = BASE_DIR / "data" / "cache"
-MODEL_DIR = BASE_DIR / "models" / "saved"
+# Use /tmp (tempfile) for Vercel/Serverless read-only filesystem compatibility
+TEMP_DIR = pathlib.Path(tempfile.gettempdir())
+
+DATA_DIR = TEMP_DIR / "crypto_cache"
+MODEL_DIR = TEMP_DIR / "crypto_models"
 
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
