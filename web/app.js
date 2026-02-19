@@ -429,7 +429,8 @@ async function loadAnalysis(key) {
 
         // Fetch Real ML Prediction from Backend (Prophet)
         try {
-            const predRes = await fetch(`http://localhost:8000/api/predict/${key}?model=prophet&days=7`);
+            // Use relative path for production (Vercel)
+            const predRes = await fetch(`/api/predict/${key}?model=prophet&days=7`);
             if (predRes.ok) {
                 const predData = await predRes.json();
                 if (predData.predicted_change_pct) {
