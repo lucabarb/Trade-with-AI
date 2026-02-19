@@ -135,7 +135,8 @@ async def get_predictions(
         raise HTTPException(status_code=400, detail=f"Symbole invalide: {symbol}")
     
     binance_symbol = config.SYMBOLS[symbol]
-    df = get_historical_data(binance_symbol, "1d", config.DEFAULT_LOOKBACK)
+    # OPTIMIZATION: Use 90 days instead of default (365) for faster training on Serverless
+    df = get_historical_data(binance_symbol, "1d", "90 days ago UTC")
     df = add_all_indicators(df)
     
     try:

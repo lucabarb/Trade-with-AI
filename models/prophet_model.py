@@ -47,15 +47,16 @@ def train_prophet(df: pd.DataFrame, symbol: str = "BTC", prediction_days: int = 
     logging.getLogger('prophet').setLevel(logging.WARNING)
     logging.getLogger('cmdstanpy').setLevel(logging.WARNING)
     
-    # Modèle Prophet — paramètres adaptés aux cryptos
+    # Modèle Prophet — paramètres adaptés aux cryptos & optimisés pour Serverless (Vercel)
     model = Prophet(
         daily_seasonality=False,       # Pas de saisonnalité journalière sur du daily
         weekly_seasonality=True,       # Effet jour de la semaine
         yearly_seasonality=True,       # Cycles annuels
-        changepoint_prior_scale=0.1,   # Flexibilité modérée (0.05 trop rigide)
+        changepoint_prior_scale=0.1,   # Flexibilité modérée
         seasonality_prior_scale=5,     # Régularisation saisonnalité
         changepoint_range=0.9,         # Changepoints sur 90% des données
         growth='linear',
+        uncertainty_samples=0,         # CRITICAL: 0 pour éviter timeout sur Vercel (1000 par défaut = trop lent)
     )
     
     model.fit(prophet_df)
@@ -72,9 +73,16 @@ def train_prophet(df: pd.DataFrame, symbol: str = "BTC", prediction_days: int = 
     predictions = []
     for _, row in future_preds.iterrows():
         pred_price = np.exp(row['yhat'])
-        lower = np.exp(row['yhat_lower'])
-        upper = np.exp(row['yhat_upper'])
         
+        # Avec uncertainty_samples=0, yhat_lower/upper n'existent pas ou sont égaux à yhat
+        # On simule une marge d'erreur de 5% pour l'affichage
+        lower = np.exp(row.get('yhat_lower', row['yhat']))
+        upper = np.exp(row.get('yhat_upper', row['yhat']))
+        
+        if lower == pred_price:
+            lower = pred_price * 0.95
+            upper = pred_price * 1.05
+            
         predictions.append({
             "date": row['ds'].strftime("%Y-%m-%d"),
             "predicted_price": round(float(pred_price), 2),

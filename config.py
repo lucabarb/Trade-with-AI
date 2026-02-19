@@ -34,7 +34,8 @@ INTERVALS = {
 }
 
 DEFAULT_INTERVAL = "1d"
-DEFAULT_LOOKBACK = "365 days ago UTC"
+# OPTIMIZATION: 90 days max for Serverless/Vercel performance
+DEFAULT_LOOKBACK = "90 days ago UTC"
 
 # ── Modèles ──────────────────────────────────────────
 PREDICTION_DAYS = 7
