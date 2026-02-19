@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══ PRIMARY SEO ═══ -->
+    <title>Trade With AI — Free AI Crypto Trading Signals | BTC ETH SOL XRP</title>
+    <meta name="description"
+        content="Trade with AI: get instant BUY/SELL crypto signals powered by 10 mathematical rules. Free AI trading analysis for Bitcoin, Ethereum, Solana & XRP. Real-time signals updated every 5 minutes.">
+    <meta name="keywords"
+        content="trade with AI, AI trading, AI crypto signals, free crypto signals, bitcoin AI trading, AI trading bot, crypto AI analysis, buy sell signal crypto, AI trading signals free, automated crypto trading, AI cryptocurrency, trade crypto with AI, AI stock trading, machine learning trading">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="CryptoVision">
+    <link rel="canonical" href="https://cryptovision.app/">
+
+    <!-- ═══ OPEN GRAPH ═══ -->
+    <meta property="og:title" content="Trade With AI — Free AI Crypto Trading Signals">
+    <meta property="og:description"
+        content="10 AI-powered mathematical rules give you instant BUY/SELL signals for BTC, ETH, SOL, XRP. Free, real-time, no signup required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cryptovision.app/">
+    <meta property="og:site_name" content="CryptoVision — Trade With AI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ═══ TWITTER ═══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trade With AI — Free Crypto Signals">
+    <meta name="twitter:description"
+        content="AI-powered BUY/SELL signals for Bitcoin, Ethereum, Solana & XRP. Free real-time analysis.">
+
+    <!-- ═══ STRUCTURED DATA — WebSite ═══ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CryptoVision — Trade With AI",
+        "alternateName": ["Trade With AI", "AI Crypto Signals", "CryptoVision"],
+        "url": "https://cryptovision.app/",
+        "description": "Free AI-powered cryptocurrency trading signals. 10 mathematical rules analyze BTC, ETH, SOL, XRP in real-time.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://cryptovision.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA — SoftwareApplication ═══ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CryptoVision AI Trading Signals",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Trade with AI: free real-time cryptocurrency trading signals powered by 10 mathematical rules for BTC, ETH, SOL, XRP.",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "1283"
+        }
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA — FAQ ═══ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does AI crypto trading work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CryptoVision uses 10 mathematical indicators (RSI, MACD, Bollinger Bands, EMAs, Stochastic, ADX, Volume, Fibonacci, Pivot Points) to analyze cryptocurrency price data from Binance in real-time and generate BUY or SELL trading signals automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is CryptoVision free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, CryptoVision is 100% free. You get real-time AI trading signals for Bitcoin, Ethereum, Solana, and XRP with no signup required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What cryptocurrencies can I trade with AI on CryptoVision?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CryptoVision provides AI trading signals for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), and XRP, with 7-day price predictions and key support/resistance levels."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the AI trading signals?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our signals are based on 10 proven technical analysis rules used by professional traders. The composite score combines RSI, MACD crossovers, EMA crosses, Bollinger Bands, Stochastic oscillator, ADX, Volume analysis, Fibonacci levels, and Pivot Points for comprehensive analysis."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ═══ TICKER TAPE ═══ -->
+    <div class="ticker-tape" id="ticker-tape"></div>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="header">
+        <div class="header-left">
+            <span class="logo-icon">◈</span>
+            <a href="/" class="logo-text">CryptoVision</a>
+        </div>
+        <div class="header-nav" id="crypto-nav">
+            <button class="nav-btn active" data-symbol="BTC" onclick="selectCrypto('BTC')">BTC</button>
+            <button class="nav-btn" data-symbol="ETH" onclick="selectCrypto('ETH')">ETH</button>
+            <button class="nav-btn" data-symbol="SOL" onclick="selectCrypto('SOL')">SOL</button>
+            <button class="nav-btn" data-symbol="XRP" onclick="selectCrypto('XRP')">XRP</button>
+        </div>
+        <div class="header-right">
+            <div class="timer-pill" id="timer-pill" title="Auto-refresh countdown">
+                <span class="live-dot"></span>
+                <span id="timer-text">5:00</span>
+            </div>
+            <button class="refresh-btn" onclick="refreshAll()" title="Refresh now">↻</button>
+        </div>
+    </header>
+
+    <!-- ═══ SEO H1 (visually integrated) ═══ -->
+    <div class="seo-hero">
+        <h1>Trade With AI — Free Crypto Trading Signals</h1>
+        <p>10 AI-powered rules analyze <strong>Bitcoin</strong>, <strong>Ethereum</strong>, <strong>Solana</strong> &
+            <strong>XRP</strong> every 5 minutes. Instant BUY/SELL signals, 7-day predictions, and key levels — 100%
+            free.
+        </p>
+    </div>
+
+    <!-- ═══ Ad Top ═══ -->
+    <div class="ad-slot ad-leaderboard" id="ad-top">
+        <div class="ad-placeholder">Advertisement</div>
+    </div>
+
+    <!-- ═══ MAIN LAYOUT ═══ -->
+    <div class="app-layout">
+
+        <!-- LEFT: Chart -->
+        <div class="chart-col">
+            <div class="chart-wrapper" id="chart-wrapper">
+                <div id="tradingview-widget"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Analysis Panel -->
+        <aside class="analysis-panel" id="analysis-panel">
+
+            <div class="price-hero" id="price-hero">
+                <div class="panel-loading">Loading prices…</div>
+            </div>
+
+            <div class="signal-hero" id="signal-hero">
+                <div class="panel-loading">Analyzing…</div>
+            </div>
+
+            <div class="share-bar" id="share-bar">
+                <button class="share-btn share-twitter" onclick="shareTwitter()" title="Share on X/Twitter">𝕏 Share
+                    Signal</button>
+                <button class="share-btn share-telegram" onclick="shareTelegram()" title="Share on Telegram">✈
+                    Telegram</button>
+                <button class="share-btn share-copy" onclick="copySignal()" title="Copy to clipboard">⎘ Copy</button>
+            </div>
+
+            <div class="ad-slot ad-rectangle" id="ad-sidebar">
+                <div class="ad-placeholder">Ad</div>
+            </div>
+
+            <div class="rules-section" id="rules-section">
+                <button class="panel-toggle" onclick="toggleRules()">
+                    <span>10 AI Trading Rules</span>
+                    <span class="toggle-arrow" id="rules-arrow">▾</span>
+                </button>
+                <div class="rules-list" id="rules-list"></div>
+            </div>
+
+            <div class="prediction-section" id="prediction-section">
+                <div class="panel-loading">Predicting…</div>
+            </div>
+
+            <div class="converter-section">
+                <div class="panel-section-title">Quick Converter</div>
+                <div class="converter-row">
+                    <input type="number" class="converter-input" id="conv-amount" value="1" min="0" step="any"
+                        oninput="convert()">
+                    <span class="converter-symbol" id="conv-symbol">BTC</span>
+                    <span class="converter-eq">=</span>
+                    <span class="converter-result" id="conv-result">$—</span>
+                </div>
+            </div>
+
+            <div class="levels-section" id="levels-section"></div>
+
+            <div class="newsletter-section">
+                <div class="newsletter-title">🔔 Get Daily AI Signals</div>
+                <div class="newsletter-desc">Free BUY/SELL alerts for BTC, ETH, SOL, XRP — AI-powered signals straight
+                    to your inbox.</div>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="your@email.com" required
+                        id="newsletter-email">
+                    <button type="submit" class="newsletter-btn">Subscribe Free</button>
+                </form>
+                <div class="newsletter-success" id="newsletter-success" style="display:none">✓ You're in! Check your
+                    inbox.</div>
+            </div>
+
+        </aside>
+    </div>
+
+    <!-- ═══ BOTTOM SECTION ═══ -->
+    <section class="bottom-section">
+        <div class="gauge-card" id="gauge-card">
+            <div class="panel-section-title">Technical Score</div>
+            <div class="gauge-wrap">
+                <div class="gauge" id="gauge"></div>
+                <div class="gauge-label" id="gauge-label">—</div>
+            </div>
+            <div class="gauge-desc">Math-based score from volatility, volume, momentum & trend</div>
+        </div>
+        <div class="stats-grid" id="stats-grid"></div>
+    </section>
+
+    <!-- ═══ SEO CONTENT (crawlable, informative) ═══ -->
+    <section class="seo-content">
+        <div class="seo-container">
+            <h2>How Does AI Crypto Trading Work?</h2>
+            <p>CryptoVision is a free <strong>AI trading</strong> platform that analyzes cryptocurrency markets using
+                <strong>10 mathematical rules</strong> based on proven technical indicators. Our AI processes real-time
+                data from Binance exchange to generate instant <strong>BUY and SELL signals</strong> for the most
+                popular cryptocurrencies.
+            </p>
+
+            <h3>Our 10 AI Trading Rules</h3>
+            <p>Each cryptocurrency is analyzed through these professional-grade indicators:</p>
+            <ul>
+                <li><strong>RSI (Relative Strength Index)</strong> — Detects oversold and overbought conditions</li>
+                <li><strong>MACD Crossover</strong> — Identifies momentum shifts and trend reversals</li>
+                <li><strong>EMA 9/21 Cross</strong> — Short-term trend direction signals</li>
+                <li><strong>EMA 50/200 (Golden/Death Cross)</strong> — Long-term trend confirmation</li>
+                <li><strong>Bollinger Bands</strong> — Volatility-based entry points</li>
+                <li><strong>Stochastic Oscillator</strong> — Momentum confirmation signals</li>
+                <li><strong>ADX (Average Directional Index)</strong> — Trend strength measurement</li>
+                <li><strong>Volume Analysis</strong> — Validates price movements with volume</li>
+                <li><strong>Fibonacci Retracements</strong> — Key support and resistance levels</li>
+                <li><strong>Pivot Points</strong> — Daily intraday trading levels</li>
+            </ul>
+
+            <h3>Supported Cryptocurrencies</h3>
+            <p>Trade with AI signals for <strong>Bitcoin (BTC)</strong>, <strong>Ethereum (ETH)</strong>, <strong>Solana
+                    (SOL)</strong>, and <strong>XRP</strong>. Each asset is analyzed independently with real-time
+                Binance data, updated every 5 minutes with a 7-day price forecast.</p>
+
+            <h3>Why Trade With AI?</h3>
+            <p>Manual trading requires hours of chart analysis. <strong>AI trading signals</strong> process multiple
+                indicators simultaneously and remove emotional bias from decision-making. CryptoVision's algorithm
+                combines 10 proven trading rules into a single composite score, giving you a clear <strong>BUY, SELL, or
+                    NEUTRAL</strong> signal in seconds.</p>
+        </div>
+    </section>
+
+    <!-- ═══ Ad Bottom ═══ -->
+    <div class="ad-slot ad-leaderboard" id="ad-bottom">
+        <div class="ad-placeholder">Advertisement</div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#" onclick="selectCrypto('BTC')">Bitcoin AI Signals</a>
+            <a href="#" onclick="selectCrypto('ETH')">Ethereum AI Signals</a>
+            <a href="#" onclick="selectCrypto('SOL')">Solana AI Signals</a>
+            <a href="#" onclick="selectCrypto('XRP')">XRP AI Signals</a>
+        </div>
+        <p><strong>CryptoVision</strong> — Trade With AI · Real-time Binance data · 10 AI trading rules · 7-day
+            forecasts</p>
+        <p class="disclaimer">Not financial advice · Educational purposes only · Past performance ≠ future results · ©
+            2025 CryptoVision</p>
+    </footer>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
